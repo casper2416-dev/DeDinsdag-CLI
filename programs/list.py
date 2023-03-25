@@ -2,6 +2,7 @@ from click import command
 from selenium.webdriver.common.by import By
 
 from utils.login import login
+from utils.format import format
 
 @command(help="Lists registered hours.")
 def list():
@@ -11,4 +12,4 @@ def list():
 
     for hour in hours:
         # Splits string at gets first item to prevent printing extra information.
-        print(hour.text.split("\n")[0])
+        print(format(hour.text.split("\n")[0]))
