@@ -9,9 +9,10 @@ def create_config() -> None:
     with open("config.json", "w") as file:
         try:
             json.dump(default_config, file, indent=4)
-            logging.info("Created blank config file.")
-        except IOError:
+            print("Created blank config file.")
+        except Exception as exception:
             logging.error("Error creating config file.")
+            logging.error(exception)
 
 def read_config() -> dict:
     with open("config.json", "r") as file:

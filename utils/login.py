@@ -33,5 +33,7 @@ def login() -> webdriver.Chrome:
 
         return driver
     except Exception as exception:
-        logging.error(f"Error: {exception}")
+        logging.error("Error starting webdriver.")
+        logging.error(exception)
         driver.quit()
+        exit()
